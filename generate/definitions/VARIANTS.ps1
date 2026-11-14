@@ -4,7 +4,7 @@ $local:VARIANTS_MATRIX = @(
         package = 'chrony'
         package_version = '4.6'
         distro = 'alpine'
-        distro_version = '3.21'
+        distro_version = '3.22'
         subvariants = @(
             @{ components = @() }
         )
