@@ -34,10 +34,10 @@ allow all
 EOF
 
 # Start server
-docker run -it -p 123:123/udp -v $(pwd)/chrony.conf:/etc/chrony/chrony.conf:ro theohbrothers/docker-chrony:v4.2
+docker run --rm -it -p 123:123/udp -v $(pwd)/chrony.conf:/etc/chrony/chrony.conf:ro theohbrothers/docker-chrony:latest
 
 # Start server (sync the system clock)
-docker run -it --cap-add SYS_TIME -p 123:123/udp -v $(pwd)/chrony.conf:/etc/chrony/chrony.conf:ro theohbrothers/docker-chrony:v4.2 -d
+docker run --rm -it --cap-add SYS_TIME -p 123:123/udp -v $(pwd)/chrony.conf:/etc/chrony/chrony.conf:ro theohbrothers/docker-chrony:latest
 ```
 
 ### Upstream NTS
