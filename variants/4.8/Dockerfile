@@ -1,12 +1,13 @@
 FROM alpine:3.24
 
+RUN apk add --no-cache ca-certificates
+
 # Install chrony
 RUN set -eux; \
     apk add --no-cache chrony~=4.8; \
     chronyd --version; \
     chronyc --version
 
-RUN apk add --no-cache ca-certificates
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x docker-entrypoint.sh
 

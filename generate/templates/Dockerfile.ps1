@@ -1,13 +1,14 @@
 @"
 FROM $( $VARIANT['_metadata']['distro'] ):$( $VARIANT['_metadata']['distro_version'] )
 
+RUN apk add --no-cache ca-certificates
+
 # Install chrony
 RUN set -eux; \
     apk add --no-cache $( $VARIANT['_metadata']['package'] )~=$( $VARIANT['_metadata']['package_version'] ); \
     chronyd --version; \
     chronyc --version
 
-RUN apk add --no-cache ca-certificates
 
 "@
 
