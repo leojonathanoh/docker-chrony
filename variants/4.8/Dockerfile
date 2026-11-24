@@ -4,7 +4,7 @@ RUN apk add --no-cache ca-certificates
 
 # Install chrony
 RUN set -eux; \
-    apk add --no-cache chrony~=4.8; \
+    apk add --no-cache chrony-nts~=4.8; \
     chronyd --version; \
     chronyc --version
 

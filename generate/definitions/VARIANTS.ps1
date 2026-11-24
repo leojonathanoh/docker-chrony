@@ -1,7 +1,7 @@
 # Docker image variants' definitions
 $local:VARIANTS_MATRIX = @(
     @{
-        package = 'chrony'
+        package = 'chrony-nts'  # In alpine:3.24, chrony with nts support was renamed to chrony-nts
         package_version = '4.8'
         distro = 'alpine'
         distro_version = '3.24'
